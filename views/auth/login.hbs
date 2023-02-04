@@ -1,0 +1,28 @@
+<div class="login-form-container">
+  <div class="login-form">
+    <h2>Login</h2>
+
+    <form action="/login" method="POST">
+
+      <label>
+        Email
+        <input
+          type="email"
+          name="email"
+          placeholder="inputemail@travelapp.com"
+        />
+      </label>
+
+      <label>
+        Password
+        <input type="password" name="password" placeholder="********" />
+      </label>
+
+      <button class="login-button" type="submit">Login</button>
+
+      {{#if errorMessage}}
+        <p class="error">{{errorMessage}}</p>
+      {{/if}}
+    </form>
+  </div>
+</div>

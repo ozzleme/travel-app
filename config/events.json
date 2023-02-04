@@ -1,0 +1,10 @@
+[
+  {
+    "eventName": "MAMI Film Festival",
+    "description": "A big movie festival in Mumbai",
+    "category": "Festival",
+    "price": "22",
+    "image": "./images/MAMI.png",
+    "city": "Mumbai"
+  }
+]

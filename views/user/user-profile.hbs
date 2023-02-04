@@ -1,0 +1,19 @@
+<h1>My Trips</h1>
+
+{{#if trips}}
+
+  {{#each trips}}
+    <h3>{{this.tripName}}</h3>
+    <h4>{{this.description}}</h4>
+    <img src="{{this.image}}" class="description-image" alt="trip image" />
+    <button><a href="/trips/{{_id}}">Trip Itinerary</a></button>
+    <form id="delete-form" action="/trips/{{_id}}/delete" method="POST">
+      <button>Delete Trip</button>
+    </form>
+  {{/each}}
+
+{{else}}
+  <h3>You have not created a trip yet.</h3>
+  <button><a class="nav-link" href="/trips">Add Trip</a></button>
+
+{{/if}}

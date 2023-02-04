@@ -1,0 +1,26 @@
+
+
+<h1>Here's more details about the Event</h1>
+<div class= "card-body"></div>
+<h2>{{singleEvent.eventName}}</h2>
+<img src="{{singleEvent.image}}" class="description-image" alt="Event Picture" />
+<h5>{{singleEvent.description}}</h5>
+<h5>Type of Event: {{singleEvent.category}}</h5>
+<h5>Price: {{singleEvent.price}}</h5>
+<h5>Location: {{singleEvent.city}}</h5>
+<img src="{{singleEvent.image}}" alt="">
+
+  <form id="delete-form" action="/events/:id/delete" method="POST">
+    <button>Delete Event</button>
+  </form>
+  
+  <br>
+
+  <form id="add-to-trips" action="/trips/{{singleEvent._id}}" method="POST">
+  <select name="tripId">{{#each trips}} 
+    <option value="{{this._id}}">{{this.tripName}} </option>
+    {{/each}}
+  </select>
+  <button>Add to Trips</button>
+</form>
+</div>

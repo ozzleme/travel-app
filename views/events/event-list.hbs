@@ -1,0 +1,14 @@
+<h1>Browse events</h1>
+
+<div class="card-body">
+
+  {{#each events}}
+    <div class="event-card">
+      <h2>{{eventName}}</h2>
+      <img src="{{image}}" class="description-image" alt="" />
+      <h5>Description: {{description}}</h5>
+      <a href="/events/{{_id}}">More Details</a>
+    </div>
+  {{/each}}
+
+</div>
