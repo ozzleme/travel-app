@@ -1,28 +1,45 @@
+
+<div class="create-trip-container">
+  <div class="internal-container">
+  <img src="https://res.cloudinary.com/ddieot9rc/image/upload/v1675522604/movie-project/london-lights-4k-ap_akzunk.jpg" alt="london-image" class="create-trip-image"/>
 <div class="create-event-form">
   {{#if userInSession}}
+  <div class="event-form-internals">
     <h2>Welcome, {{userInSession.email}}!</h2>
-    <h3>Create Trip</h3>
+    <h3>Tell us about your trip.</h3>
     <form action="/add-trip" method="POST" enctype="multipart/form-data">
       <label for="">
         Trip Name
-        <input type="text" name="tripName" />
+        <input type="text" name="tripName" placeholder="Enter trip name" />
       </label>
+      <br>
       <label for="">
         Describe your trip
-        <input type="text" name="description" />
+
+        <br>
+
+        <textarea
+          name="description"
+          rows="5"
+          cols="30"
+          placeholder="Enter description"
+        ></textarea>
       </label>
+      <br>
       <label for="">
         Image
         <input type="file" name="image" />
       </label>
-      <button type="submit">Add Trip</button>
-    </form>
-
-    <form id="delete-form" action="/trips/{{_id}}/delete" method="POST">
-      <button type="submit" class="btn btn-danger">Cancel Trip</button>
+      <br>
+      <button class="btn btn-outline-dark" type="submit">Add Trip</button>
     </form>
 
   {{else}}
     <p>Still no logged in user, sorry!</p>
   {{/if}}
+  {{#if errorMessage}}
+    <p class="error">{{errorMessage}}</p>
+  {{/if}}
 </div>
+</div>
+  </div>

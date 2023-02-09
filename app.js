@@ -23,10 +23,6 @@ app.use((req, res, next) => {
     next()
 })
 
-app.use(express.json());
-app.use(cors());
-app.use("/api", eventRoutes);
-
 
 const indexRoutes = require("./routes/index.routes");
 app.use("/", indexRoutes);

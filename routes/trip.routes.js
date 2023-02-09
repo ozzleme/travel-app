@@ -10,13 +10,19 @@ const fileUploader = require('../config/cloudinary.config');
 // this route has the same action of the post form in create hbs page
 
 router.post("/add-trip", isLoggedIn, fileUploader.single('image'), (req, res) => {
-  const { tripName, description } = req.body;
-  Trip.create({ tripName, description, user: req.session.currentUser._id, image: req.file.path })
+  const { tripName, description } = req.body
+  const image = req.file
+  if (!tripName || !description || !image) {
+    res.render('user/create-trip', { errorMessage: "Please fill in all mandatory fields. Trip name, description and image are required." })
+    return
+  }
+  Trip.create({ tripName: tripName, description: description, user: req.session.currentUser._id, image: req.file.path })
     .then(result => {
       console.log(result);
       res.redirect("/user-profile");
+      return
     })
-    .catch((err) => console.log(err));
+    .catch((err) => console.log(err))
 });
 
 // read the document by finding all the events and render them
@@ -67,6 +73,5 @@ router.post('/trips/:tripId/delete', (req, res, next) => {
       console.log('The error while deleting a trip is, ', err)
     })
 })
-
 
 module.exports = router;

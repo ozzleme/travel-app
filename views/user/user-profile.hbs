@@ -1,19 +1,33 @@
-<h1>My Trips</h1>
+<div class="my-trip-container">
+  <div class="head-container">
+</div>
+  {{#if trips}}
+<div class="trip-card-body">
+    {{#each trips}}
+    <div class="my-trip-card-container">
+    
+      <h3>{{this.tripName}}</h3>
+      <h5><em>{{this.description}}</em></h5>
+         <img src="{{this.image}}" class="description-image-my-trips" alt="trip image" />
 
-{{#if trips}}
+         <button class="btn-trip-button"><a href="/trips/{{_id}}" class="btn-trip-button">Trip Itinerary</a></button>
+      <form id="delete-form" action="/trips/{{_id}}/delete" method="POST">
+        <button class="btn-trip-button-delete">Delete Trip</button>
+      </form>
+      
+      </div>
+  
+    {{/each}}
+    </div>
+</div>
 
-  {{#each trips}}
-    <h3>{{this.tripName}}</h3>
-    <h4>{{this.description}}</h4>
-    <img src="{{this.image}}" class="description-image" alt="trip image" />
-    <button><a href="/trips/{{_id}}">Trip Itinerary</a></button>
-    <form id="delete-form" action="/trips/{{_id}}/delete" method="POST">
-      <button>Delete Trip</button>
-    </form>
-  {{/each}}
+  {{else}}
+  <div class="error-styling">
+    <h3>You have not created a trip yet.</h3>
+    <button class="error-button-styling"><a class="nav-link" href="/trips">Add Trip</a></button>
+    </div>
+  {{/if}}
 
-{{else}}
-  <h3>You have not created a trip yet.</h3>
-  <button><a class="nav-link" href="/trips">Add Trip</a></button>
 
-{{/if}}
+
+</div>

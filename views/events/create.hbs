@@ -1,30 +1,72 @@
-<div class="create-event-form">
-  <h2>Create Event</h2>
-  <form action="/add-event" method="POST">
-    <label>
-      Event Name
-      <input type="text" name="eventName" placeholder="Enter event name">
-    </label>
-    <label>
-      Description
-      <input type="text" name="description" placeholder="Enter description">
-    </label>
-    <label>
-      Category
-      <input type="text" name="category" placeholder="Enter category">
-    </label>
-    <label>
-      Price
-      <input type="text" name="price" placeholder="Enter price">
-    </label>
-    <label>
-      Image
-      <input type="text" name="image" placeholder="Enter image URL">
-    </label>
-    <label>
-      City
-      <input type="text" name="city" placeholder="Enter city">
-    </label>
-    <button type="submit">Create Event</button>
-  </form>
+<div class="create-trip-container">
+  <div class="internal-container">
+    <img
+      src="https://res.cloudinary.com/ddieot9rc/image/upload/v1675522459/movie-project/NYC_hzbhqi.jpg"
+      alt="nyc-image"
+      class="create-event-image"
+    />
+    <div class="create-event-form">
+      <div class="event-form-internals">
+        <h2>Add Event</h2>
+        <form action="/add-event" method="POST" enctype="multipart/form-data">
+          <label for="eventName">
+            Event Name
+            <input
+              type="text"
+              name="eventName"
+              placeholder="Enter event name"
+            />
+          </label>
+          <label for="description">
+            Description
+            <br />
+            <textarea
+              name="description"
+              rows="5"
+              cols="30"
+              placeholder="Enter event description"
+            ></textarea>
+          </label>
+          <label for="category">
+            Category
+
+            <select id="category" name="category">
+              <option value="Sightseeing">Sightseeing</option>
+              <option value="Concert">Concert</option>
+              <option value="Food">Food</option>
+              <option value="Festival">Festival</option>
+              <option value="Shopping">Shopping</option>
+            </select>
+          </label>
+          <br />
+          <label for="price">
+            Price
+
+            <input type="text" name="price" placeholder="Enter event price" />
+          </label>
+          <br />
+          <label for="image">
+            Image
+            <input type="file" name="image" id="image-cloudinary" />
+          </label>
+          <label for="city">
+            City
+            <select id="city" name="city">
+              <option value="London">London</option>
+              <option value="New York">New York</option>
+              <option value="Mumbai">Mumbai</option>
+            </select>
+          </label>
+          <br />
+          <br />
+          <button class="btn btn-outline-dark" type="submit">Create Event</button>
+
+          {{#if errorMessage}}
+            <p class="error">{{errorMessage}}</p>
+          {{/if}}
+
+        </form>
+      </div>
+    </div>
+  </div>
 </div>

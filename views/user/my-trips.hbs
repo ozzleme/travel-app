@@ -1,27 +1,28 @@
+<div class="my-trips-events-page">
 {{#if userInSession}}
-  <h2>{{userInSession.email}}'s Trips</h2>
 
   <div class="trip-container">
 
     <div class="trip-card">
-      <h2>Trip Name: {{this.tripName}}</h2>
-      <h5>Description: {{this.description}}</h5>
-      <img src="{{this.image}}" class="description-image" alt="trip image" />
+      <h3 class="trip-card-title">Trip Name: {{this.tripName}}</h3>
+      <h5 class="trip-card-description">Description: {{this.description}}</h5>
+      <img src="{{this.image}}" class="trip-card-image" alt="trip image" />
 
       {{#each event}}
 
-        <h2>Event:</h2>
-        <h4>{{eventName}}</h4>
-        <img src="{{image}}" alt="Event Picture" />
-        <h5>Description: {{description}}</h5>
+        <h4 class="event-title">Event:</h4>
+        <h5 class="event-name">{{eventName}}</h5>
+        <img src="{{image}}" class="event-image" alt="Event Picture" />
+        <h6 class="event-description">Description: {{description}}</h6>
 
       {{/each}}
 
-      <button> <a href="/user-profile">Back to My Trips</a></button>
+      <a href="/user-profile" class="back-to-trips-btn">Back to My Trips</a>
     </div>
 
   </div>
 
 {{else}}
-  <p>Still no logged in user, sorry!</p>
+  <p class="text-center">Still no logged in user, sorry!</p>
 {{/if}}
+</div>

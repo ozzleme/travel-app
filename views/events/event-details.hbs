@@ -1,26 +1,30 @@
 
+<div class="event-details-page">
+<div class="event-details-card-body">
 
-<h1>Here's more details about the Event</h1>
-<div class= "card-body"></div>
 <h2>{{singleEvent.eventName}}</h2>
-<img src="{{singleEvent.image}}" class="description-image" alt="Event Picture" />
+<img src="{{singleEvent.image}}" class="event-details-description-image" alt="Event Picture" />
 <h5>{{singleEvent.description}}</h5>
 <h5>Type of Event: {{singleEvent.category}}</h5>
 <h5>Price: {{singleEvent.price}}</h5>
 <h5>Location: {{singleEvent.city}}</h5>
-<img src="{{singleEvent.image}}" alt="">
 
-  <form id="delete-form" action="/events/:id/delete" method="POST">
-    <button>Delete Event</button>
-  </form>
-  
-  <br>
-
-  <form id="add-to-trips" action="/trips/{{singleEvent._id}}" method="POST">
-  <select name="tripId">{{#each trips}} 
-    <option value="{{this._id}}">{{this.tripName}} </option>
-    {{/each}}
-  </select>
-  <button>Add to Trips</button>
-</form>
+{{#if userInSession}}
+    <form id="add-to-trips" class="event-details-form" action="/trips/{{singleEvent._id}}" method="POST">
+      <select name="tripId" class="event-details-form-select">{{#each trips}}
+          <option value="{{this._id}}">{{this.tripName}} </option>
+        {{/each}}
+      </select>
+      <button class="event-details-form-button">Add to My Trips</button>
+    </form>
+     <form id="delete-form" class="event-details-form" action="/events/{{singleEvent._id}}/delete" method="POST">
+      <button class="event-details-form-button-delete">Delete Event</button>
+     </form>
+  </div>
 </div>
+{{else}}
+  <h3>Please sign up and create an account.</h3>
+  <button class="sign-up-button" type="submit"><a href="/signup">Create Account</a></button>
+{{/if}}
+
+

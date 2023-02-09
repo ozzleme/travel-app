@@ -1,14 +1,44 @@
-<h1>Browse events</h1>
+<div class="browse-event-container">
+  <div class="search-bar">
+    <h1>Search for things to do</h1>
 
-<div class="card-body">
-
-  {{#each events}}
-    <div class="event-card">
-      <h2>{{eventName}}</h2>
-      <img src="{{image}}" class="description-image" alt="" />
-      <h5>Description: {{description}}</h5>
-      <a href="/events/{{_id}}">More Details</a>
+    <a
+      class="nav-link dropdown-toggle"
+      href="#"
+      id="navbarDropdown"
+      role="button"
+      data-bs-toggle="dropdown"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      Select Your City
+    </a>
+    <div class="dropdown-menu col-sm-2" aria-labelledby="navbarDropdown">
+      <a class="dropdown-item" href="/city/London">London</a>
+      <a class="dropdown-item" href="/city/Mumbai">Mumbai</a>
+      <a class="dropdown-item" href="/city/New-York">New York</a>
     </div>
-  {{/each}}
+  </div>
+
+  {{! add another dropdown for category if have the time to set up the get route here }}
+
+  <div class="card-body">
+
+    {{#each events}}
+      <div class="event-card">
+        <a href="/events/{{_id}}"><img
+            src="{{image}}"
+            class="description-image-browse-page"
+            alt=""
+          /></a>
+        <h5><a
+            href="/events/{{_id}}"
+            class="event-details-link"
+          >{{eventName}}</a></h5>
+      </div>
+    {{/each}}
+
+  </div>
 
 </div>
+

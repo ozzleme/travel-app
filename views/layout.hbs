@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Cam and Nicole Travel App</title>
+    <title> Globe Hopper</title>
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <link
       rel="stylesheet"
@@ -16,16 +16,19 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
-      crossorigin="anonymous"
-    />
+      crossorigin="anonymous"/>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lacquer&family=Lato&display=swap" rel="stylesheet">
   
   </head>
   <header>
 
-    <div class="container">
 
-      <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary " class="navbar bg-dark" data-bs-theme="dark">
-        <a class="navbar-brand col-sm-6" href="/"><b> Travel App</b></a>
+      <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary bg-dark " data-bs-theme="dark" >
+        <a class="navbar-brand col-sm-7" href="/"><b> Globe Hopper </b></a> 
+  
 
         <button
           class="navbar-toggler"
@@ -36,24 +39,12 @@
           aria-expanded="false"
           aria-label="Toggle navigation">
 
-          <span class="navbar-toggler-icon"></span>
+          
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <div class="collapse navbar-collapse p-2" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 menu">
 
-            {{! <div>
-              <input id="city-name-input" type="text" />
-              <button id="get-city-btn">Select Your City</button>
-            </div> }}
-
-            {{! <script>
-              function onClick() { document .getElementById('get-city-btn')
-              .addEventListener('click', () => { const userInput =
-              document.getElementById('city-name-input').value;
-              getEventInfo(userInput); }); };
-            </script> }}
-
-            <li class="nav-item dropdown">
+          <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
                 href="#"
@@ -65,24 +56,23 @@
               >
                 Select Your City
               </a>
-              <div class="dropdown-menu col-sm-2" aria-labelledby="navbarDropdown">
+              <div class="dropdown-menu p-2" aria-labelledby="navbarDropdown">
                 <a
                   class="dropdown-item"
-                  href="/api/event-cities"
-                  onclick="onClick()"
+                  href="/city/London"
                 >London</a>
                 <a
                   class="dropdown-item"
-                  href="/api/event-cities"
-                  onclick="onClick()"
+                  href="/city/Mumbai"
                 >Mumbai</a>
                 <a
                   class="dropdown-item"
-                  href="/api/event-cities"
-                  onclick="onClick()"
+                  href="/city/New-York"
                 >New York</a>
               </div>
             </li>
+
+            
 
             <li class="nav-item">
               <a class="nav-link" href="/events">Events</a>
@@ -108,7 +98,7 @@
 
             {{#if userInSession}}
               <li class="nav-item">
-                <a class="nav-link" href="/my-trips/{{tripId}}">My Trips</a>
+                <a class="nav-link" href="/user-profile">My Trips</a>
               </li>
               <li class="nav-item">
                 <form action="/logout" method="POST">
@@ -127,33 +117,12 @@
           </ul>
         </div>
       </nav>
-    </div>
   </header>
 
 
     {{{body}}}
 
-
-
-  {{!-- <footer class="py-5 page-footer footer">
-    <div class="container-fluid container-fluid-max">
-      <div class="row">
-        <div class="col-12 col-md-6 footer-child copyright">
-          Booking © 2023 All Rights Reserved
-        </div>
-        <div class="col-12 col-md-6 footer-child footer-links">
-          <a href="" class="mr-3">Privacy Policy</a>
-          <a href="">FAQ</a>
-          <div>
-            <small>Made by <a href=" " target="_blank">Nicole Bell and Cameron Aitcheson-Labarr</a>
-            </small>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer> --}}
-
-    <script src="/js/script.js"></script>
+  <script src="/js/script.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"

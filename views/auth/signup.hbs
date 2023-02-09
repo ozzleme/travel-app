@@ -1,20 +1,30 @@
-
-
-<div class="signup-form">
-  <h2>Sign up</h2>
-  <form action="/signup" method="POST">
-    <label> Email:
-      <input type="email" name="email" placeholder="Please enter your email address">
-    </label>
-    <br><br>
-    <label> Password:
-      <input type="password" name="password" placeholder="*********">
-    </label>
-    <br><br>
-    <button class="sign-up-button" type="submit">Create Account</button>
-    <br><br>
-    {{#if errorMessage}}
-      <p class="error">{{errorMessage}}</p>
-    {{/if}}
-  </form>
+<div class="sign-up-container">
+  <div class="signup-form">
+    <h2>Sign up</h2>
+    <form action="/signup" method="POST">
+      <label>
+        Email:
+        <input
+          type="email"
+          name="email"
+          placeholder="Please enter your email address"
+        />
+      </label>
+      <br /><br />
+      <label>
+        Password:
+        <input type="password" name="password" placeholder="********" />
+      </label>
+      <br /><br />
+      <button class="sign-up-button" type="submit">Create Account</button>
+      <br /><br />
+      {{#if errorMessage}}
+        <p class="error">{{errorMessage}}</p>
+      {{/if}}
+    </form>
+  </div>
+  <div class="log-in-container">
+    <p>If you already have an account
+      <a href="/login" class="login-button">Log In</a></p>
+  </div>
 </div>
