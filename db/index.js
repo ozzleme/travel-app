@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 // ℹ️ Sets the MongoDB URI for our app to have access to it.
 
 const MONGO_URI =
-  process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/project-2";
+  process.env.MONGODB_URI || "mongodb+srv://labarr-bell:1234@cluster0.jefqq6s.mongodb.net/test";
 
 mongoose
   .connect(MONGO_URI)
