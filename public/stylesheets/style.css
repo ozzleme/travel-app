@@ -31,7 +31,7 @@
   }
 
   body {
-    padding-top: 70px;
+    /* padding-top: 70px; */
     color: black;
     width: 100%;
     overflow-x: hidden;
@@ -55,9 +55,25 @@
     background-color: #555555;
   }
 
+  .navbar-brand {
+    padding-left: 5%;
+    border: 0;
+  }
+
   .navbar {
     width: 100%;
+    color: white;
+    text-decoration: none;
+    list-style-type: none;
+    background-color: #2b3036;
   }
+  .dropdownMenuButton {
+    color: white;
+  }
+  .container {
+    width: 100%;
+  }
+
   /* end of body & other properties */
 
   /* Carousel stylingç */
@@ -70,16 +86,6 @@
     width: auto;
     padding-top: 10px;
     padding-bottom: 10px;
-  }
-
-  .navbar {
-    float: left;
-    width: 100%;
-  }
-
-  .navbar-brand {
-    padding-left: 10px;
-    border: 0;
   }
 
   .top-container {
@@ -148,7 +154,8 @@
     height: auto;
   }
 
-  @media screen and (max-width: 900px) {
+  /* @media screen and (max-width: 1000px) {
+    .navbar,
     .navbar a,
     .navbar input[type="text"] {
       float: none;
@@ -158,7 +165,7 @@
       margin: 0;
       padding: 14px;
     }
-  }
+  } */
 
   .center-text {
     display: flex;
