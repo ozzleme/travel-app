@@ -61,7 +61,7 @@ router.get('/login', isLoggedOut, (req, res) => {
     res.render('auth/login')
 })
 
-// add custom middleware here 
+// add custom middleware 
 
 router.post('/login', (req, res) => {
     console.log("SESSION =====>", req.session)
@@ -108,46 +108,6 @@ router.post('/logout', (req, res, next) => {
     });
 });
 
-
-
-
-
-//To do:
-// home page - in route styling - CAM WIP 
-// CSS - flexboxed/bootstrapped - in route - styling- CAM WIP
-// drop down under ADD EVENT should include 5 categories (Sightseeing, Festival, Concert, Shopping, Food) - Nicole WIP
-// FILTER the cities drop down - Nicole WIP
-// do we want to follow the tutorial and add cloudidanry instead of the image URL for create an event - cool and fun 
-
-// CSS divided up
-
-// Cam
-// Sign up & Login
-// Index and Layouts
-
-// Nicole
-// Event and Trips
-// 
-
-// Done 
-// Make delete route - NICOLE - done
-// add links to pages/ - CAM -done
-// Create “My Trips” - DONE
-// Add an event to “My Trips” - DONE
-// Delete an event from “My Trips” - NICOLE - done
-// Create an event for “My Trip” - DONE
-// update a trip - N/A 
-// delete a Event - TO DO - done 
-// delete trip - NIC - done
-// create a trip - done
-// read a trip - done
-// add login log out, - done 
-// create event - done 
-// add to event schema add more cites - CAM/NIC - done
-// my-trips page -done
-// MY TRIPS PAGE - done
-// images for event model - done
-// #1 Priority MY TRIPS PAGE - done
 
 
 module.exports = router

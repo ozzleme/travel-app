@@ -6,8 +6,7 @@ const { isLoggedIn, isLoggedOut } = require("../middleware/route-guard.js");
 const fileUploader = require('../config/cloudinary.config');
 
 
-// create the event routes
-// this route has the same action of the post form in create hbs page
+// create the trip routes
 
 router.post("/add-trip", isLoggedIn, fileUploader.single('image'), (req, res) => {
   const { tripName, description } = req.body
@@ -25,7 +24,7 @@ router.post("/add-trip", isLoggedIn, fileUploader.single('image'), (req, res) =>
     .catch((err) => console.log(err))
 });
 
-// read the document by finding all the events and render them
+// read the document by finding all the trips and render them
 
 router.get("/trips", isLoggedIn, (req, res) => {
   res.render("user/create-trip", { userInSession: req.session.currentUser });

@@ -2,8 +2,6 @@
 // https://www.npmjs.com/package/mongoose
 const mongoose = require("mongoose");
 
-// ℹ️ Sets the MongoDB URI for our app to have access to it.
-
 const MONGO_URI =
   process.env.MONGODB_URI || "mongodb+srv://labarrbell:1234@cluster0.jefqq6s.mongodb.net/travelapp2?retryWrites=true&w=majority";
 

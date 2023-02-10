@@ -1,13 +1,11 @@
 const User = require('../models/User.model');
 const Event = require('../models/Event.model');
 const router = require('express').Router();
-// const {isAdmin} = require('../middleware/route-guard.js');
 const Trip = require('../models/Trip.model');
 const fileUploader = require('../config/cloudinary.config');
 const { isLoggedIn, isLoggedOut } = require("../middleware/route-guard.js");
 
 // create the event routes 
-// this route has the same action of the post form in create hbs page 
 
 router.post('/add-event', fileUploader.single('image'), (req, res) => {
     const { eventName, description, category, price, city } = req.body
@@ -74,7 +72,7 @@ router.post('/events/:eventId/delete', (req, res, next) => {
         })
 })
 
-router.get('/city/:city', (req, res) => { // if you want to do more than on do query strings
+router.get('/city/:city', (req, res) => {
     let cityName = req.params.city.replace("-", " ");
     Event.find({ city: cityName })
         .then((result) => {

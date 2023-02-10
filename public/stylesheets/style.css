@@ -148,7 +148,6 @@
     height: auto;
   }
 
-  /* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
   @media screen and (max-width: 900px) {
     .navbar a,
     .navbar input[type="text"] {
@@ -518,13 +517,17 @@
   }
 }
 
+.my-trips-events-page {
+  height: 100vh;
+  width: 100vw;
+  background-color: #2b3036;
+}
+
 .trip-container {
-  padding-top: 25%;
+  padding: 7%;
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 150vh;
-  background-color: #2b3036;
+  flex-wrap: wrap;
 }
 
 .trip-card {
@@ -546,9 +549,9 @@
 }
 
 .trip-card-image {
-  width: 100%;
+  width: 90%;
   height: 200px;
-  object-fit: cover;
+  object-fit: fill;
   margin: 2rem 0;
   border-radius: 10px;
 }
@@ -737,8 +740,6 @@
 .error-styling {
   display: flex;
   flex-direction: column;
-  /* align-content: center;
-  justify-content: center; */
 }
 
 .error-button-styling {
