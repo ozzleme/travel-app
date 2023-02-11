@@ -10,7 +10,7 @@
   html {
     font-size: calc(15px + 0.390625vw);
     font-family: "Lato", sans-serif;
-    font-size: 130%;
+    font-size: 115%;
     box-sizing: border-box;
     background-color: #2b3036;
     width: 100%;
@@ -300,6 +300,9 @@
     cursor: pointer;
   }
 
+  .create-event-form {
+    position: absolute;
+  }
   /* Footer section */
 
   .footer-container {
@@ -470,6 +473,10 @@
   .create-event-form,
   .my-trip-internal-container {
     position: relative;
+  }
+
+  .create-event-container {
+    width: 200px;
   }
   .create-trip-image,
   .create-event-image {
